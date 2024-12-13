@@ -23,12 +23,6 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function profile()
-    {
-        return $this->hasOne(Profile::class);
-    }
-
-
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -38,6 +32,16 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function experience()
+    {
+        return $this->hasone(Experience::class);
+    }
 
     /**
      * Get the attributes that should be cast.
